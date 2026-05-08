@@ -1,4 +1,4 @@
-import { createMDX } from "@next/mdx"
+import withMdx from "@next/mdx"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,8 +9,6 @@ const nextConfig = {
   },
 }
 
-const withMdx = createMDX({
+export default withMdx({
   extension: /\.(md|mdx)$/,
-})
-
-export default withMdx(nextConfig)
+})(nextConfig)
