@@ -1,56 +1,65 @@
 export const personalInfo = {
-  name: "Georges Noe",
+  name: "Kossi Georges-Noé AHOMBO",
   role: "Full Stack Developer",
   bio: "I build high-quality web applications with a focus on performance and user experience.",
-  email: "hello@example.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  email: "georges.ahombo@gmail.com",
+  github: "https://github.com/georgesnoe",
+  linkedin: "https://linkedin.com/in/kossigeorgesnoeahombo",
 }
 
 export const projects = [
   {
     title: "Portfolio Website",
-    description: "A modern developer portfolio built with Next.js, Motion, and Shadcn UI.",
+    description:
+      "A modern developer portfolio built with Next.js, Motion, and Shadcn UI.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
-    github: "https://github.com",
-    live: "https://georgesnoe.github.io",
+    github: "https://github.com/georgesnoe/georgesnoe.github.io",
+    live: "https://www.georgesnoe.fr.eu.org",
   },
   {
-    title: "E-commerce Platform",
-    description: "A full-featured online store with payment integration and admin dashboard.",
-    techStack: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "CoopLedger",
+    description:
+      "A platform built on Web3 technology for agricultural cooperatives, to ensure transparency and accountability.",
+    techStack: [
+      "Next.js",
+      "Expressjs",
+      "PostgreSQL",
+      "Fedapay",
+      "Solidity",
+      "Pinata",
+      "Polygon",
+      "React Native",
+      "Socket.io",
+    ],
+    github: "https://github.com/georgesnoe/coopledger",
+    live: "https://coopledger-web.vercel.app/",
   },
   {
-    title: "AI Chat Application",
-    description: "Real-time chat interface powered by large language models.",
-    techStack: ["Next.js", "OpenAI API", "Socket.io"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "LBS Planning",
+    description: "Enhanced design for LBS planning, built for students",
+    techStack: ["Next.js", "PostgreSQL", "n8n"],
+    github: "https://github.com/georgesnoe/lbs-planning",
+    live: "https://lbs-planning.vercel.app/",
   },
 ]
 
 export const skills = [
-  { name: "React / Next.js", category: "Frontend" },
-  { name: "TypeScript", category: "Languages" },
-  { name: "Node.js", category: "Backend" },
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
   { name: "Tailwind CSS", category: "Frontend" },
-  { name: "PostgreSQL", category: "Database" },
   { name: "Motion", category: "Frontend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Spring boot", category: "Backend" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "SQL Server", category: "Database" },
 ]
 
 export const experience = [
   {
-    company: "Tech Solutions",
-    role: "Senior Developer",
-    period: "2022 - Present",
-    description: "Leading the frontend team in developing scalable web applications.",
-  },
-  {
-    company: "Creative Agency",
-    role: "Web Developer",
-    period: "2020 - 2022",
-    description: "Built interactive websites for various clients using modern technologies.",
+    company: "KYA-Energy Group",
+    role: "Web developer intern",
+    period: "July - September 2025",
+    description:
+      "Redesigned company old website to ensure responsiveness and accessibility. Built a monitoring platform for solar energy usage.",
   },
 ]
