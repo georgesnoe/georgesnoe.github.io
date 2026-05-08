@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
 import { IconSun, IconMoon, IconTerminal2 } from "@tabler/icons-react"
@@ -17,24 +16,24 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between px-4 sm:px-8 max-w-7xl mx-auto">
+      <div className="container mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-8">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2">
             <IconTerminal2 className="h-6 w-6" />
-            <span className="font-bold inline-block">Portfolio</span>
+            <span className="inline-block font-bold">Georges-Noé</span>
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link
               href="/#projects"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="text-foreground/60 transition-colors hover:text-foreground/80"
             >
               Projects
             </Link>
             <Link
               href="/blog"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="text-foreground/60 transition-colors hover:text-foreground/80"
             >
               Blog
             </Link>
@@ -42,8 +41,8 @@ export function Navbar() {
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Button variant="ghost" size="icon" className="h-9 w-9 px-0">
-                <IconSun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <IconMoon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <IconSun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <IconMoon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
