@@ -1,11 +1,24 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { IconBrandGithub, IconBrandLinkedin, IconExternalLink, IconMail, IconSend } from "@tabler/icons-react"
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconExternalLink,
+  IconMail,
+  IconSend,
+} from "@tabler/icons-react"
 import { FadeIn } from "@/components/fade-in"
 import { projects, skills, experience, personalInfo } from "@/lib/data"
 import Link from "next/link"
@@ -15,16 +28,20 @@ export default function Page() {
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-20 md:pt-32 max-w-7xl sm:px-8">
+      <section className="container mx-auto max-w-7xl px-4 pt-20 sm:px-8 md:pt-32">
         <FadeIn>
-          <div className="flex flex-col items-center text-center gap-6">
-            <Badge variant="outline" className="px-4 py-1 text-sm font-normal border-primary/20 bg-primary/5">
+          <div className="flex flex-col items-center gap-6 text-center">
+            <Badge
+              variant="outline"
+              className="border-primary/20 bg-primary/5 px-4 py-1 text-sm font-normal"
+            >
               Available for new projects
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              I build <span className="text-primary">digital experiences</span> that matter.
+            <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+              I build <span className="text-primary">digital experiences</span>{" "}
+              that matter.
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-[600px]">
+            <p className="max-w-150 text-lg text-muted-foreground md:text-xl">
               Hi, I&apos;m {personalInfo.name}. {personalInfo.bio}
             </p>
             <div className="flex gap-4">
@@ -40,14 +57,21 @@ export default function Page() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container mx-auto px-4 max-w-7xl sm:px-8">
+      <section
+        id="projects"
+        className="container mx-auto max-w-7xl px-4 sm:px-8"
+      >
         <FadeIn>
-          <div className="flex flex-col gap-4 mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Selected Projects</h2>
-            <p className="text-muted-foreground">A showcase of some of my recent work and side projects.</p>
+          <div className="mb-12 flex flex-col gap-4">
+            <h2 className="text-3xl font-bold tracking-tight">
+              Selected Projects
+            </h2>
+            <p className="text-muted-foreground">
+              A showcase of some of my recent work and side projects.
+            </p>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <FadeIn key={project.title} delay={index * 0.1}>
               <motion.div
@@ -55,10 +79,10 @@ export default function Page() {
                 transition={{ duration: 0.2 }}
                 className="h-full"
               >
-                <Card className="flex flex-col h-full overflow-hidden border-muted-foreground/10">
-                  <div className="aspect-video bg-muted relative group">
+                <Card className="flex h-full flex-col overflow-hidden border-muted-foreground/10">
+                  <div className="group relative aspect-video bg-muted">
                     {/* Placeholder for project image */}
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-2xl">
+                    <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-muted-foreground/20">
                       {project.title}
                     </div>
                   </div>
@@ -97,21 +121,27 @@ export default function Page() {
       </section>
 
       {/* Experience & Skills Section */}
-      <section className="container mx-auto px-4 max-w-7xl sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <section className="container mx-auto grid max-w-7xl grid-cols-1 gap-20 px-4 sm:px-8 lg:grid-cols-2">
         <div>
           <FadeIn>
-            <h2 className="text-3xl font-bold tracking-tight mb-8">Experience</h2>
+            <h2 className="mb-8 text-3xl font-bold tracking-tight">
+              Experience
+            </h2>
           </FadeIn>
-          <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-muted">
+          <div className="relative space-y-8 before:absolute before:top-2 before:bottom-2 before:left-[11px] before:w-[2px] before:bg-muted">
             {experience.map((exp, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <div className="relative pl-10">
-                  <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-background border-4 border-primary" />
+                  <div className="absolute top-1 left-0 h-6 w-6 rounded-full border-4 border-primary bg-background" />
                   <div className="flex flex-col gap-1">
-                    <span className="text-sm text-muted-foreground font-medium">{exp.period}</span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {exp.period}
+                    </span>
                     <h3 className="text-xl font-bold">{exp.role}</h3>
                     <p className="font-medium text-primary">{exp.company}</p>
-                    <p className="text-muted-foreground mt-2">{exp.description}</p>
+                    <p className="mt-2 text-muted-foreground">
+                      {exp.description}
+                    </p>
                   </div>
                 </div>
               </FadeIn>
@@ -120,14 +150,18 @@ export default function Page() {
         </div>
         <div>
           <FadeIn>
-            <h2 className="text-3xl font-bold tracking-tight mb-8">Skills & Technologies</h2>
+            <h2 className="mb-8 text-3xl font-bold tracking-tight">
+              Skills & Technologies
+            </h2>
           </FadeIn>
           <div className="grid grid-cols-2 gap-4">
             {skills.map((skill, index) => (
               <FadeIn key={skill.name} delay={index * 0.05} direction="right">
-                <div className="p-4 rounded-lg border bg-card text-card-foreground shadow-sm">
+                <div className="rounded-lg border bg-card p-4 text-card-foreground shadow-sm">
                   <p className="font-medium">{skill.name}</p>
-                  <p className="text-xs text-muted-foreground">{skill.category}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {skill.category}
+                  </p>
                 </div>
               </FadeIn>
             ))}
@@ -136,47 +170,75 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container mx-auto px-4 max-w-3xl sm:px-8">
+      <section
+        id="contact"
+        className="container mx-auto max-w-3xl px-4 sm:px-8"
+      >
         <FadeIn>
-          <div className="flex flex-col items-center text-center gap-4 mb-12">
+          <div className="mb-12 flex flex-col items-center gap-4 text-center">
             <h2 className="text-3xl font-bold tracking-tight">Get In Touch</h2>
             <p className="text-muted-foreground">
-              Have a project in mind or just want to say hi? Feel free to reach out!
+              Have a project in mind or just want to say hi? Feel free to reach
+              out!
             </p>
           </div>
         </FadeIn>
         <FadeIn>
           <Card className="p-6 md:p-8">
             <form className="grid gap-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="grid gap-2">
-                  <label htmlFor="name" className="text-sm font-medium">Name</label>
+                  <label htmlFor="name" className="text-sm font-medium">
+                    Name
+                  </label>
                   <Input id="name" placeholder="John Doe" />
                 </div>
                 <div className="grid gap-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="john@example.com" />
+                  <label htmlFor="email" className="text-sm font-medium">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="john@example.com"
+                  />
                 </div>
               </div>
               <div className="grid gap-2">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium">
+                  Subject
+                </label>
                 <Input id="subject" placeholder="Project Inquiry" />
               </div>
               <div className="grid gap-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
-                <Textarea id="message" placeholder="How can I help you?" className="min-h-[150px]" />
+                <label htmlFor="message" className="text-sm font-medium">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  placeholder="How can I help you?"
+                  className="min-h-[150px]"
+                />
               </div>
               <Button className="w-full">
                 <IconSend className="mr-2 h-4 w-4" />
                 Send Message
               </Button>
             </form>
-            <div className="mt-8 pt-8 border-t flex flex-col md:flex-row items-center justify-center gap-8">
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+            <div className="mt-8 flex flex-col items-center justify-center gap-8 border-t pt-8 md:flex-row">
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+              >
                 <IconMail className="h-5 w-5" />
                 <span>{personalInfo.email}</span>
               </a>
-              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+              >
                 <IconBrandLinkedin className="h-5 w-5" />
                 <span>LinkedIn</span>
               </a>
