@@ -21,6 +21,7 @@ export const projects = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion", "@base-ui/react"],
     github: "https://github.com/georgesnoe/georgesnoe.github.io",
     live: "https://www.georgesnoe.fr.eu.org",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/georgesnoe.github.io",
   },
   {
     title: "CoopLedger",
@@ -38,6 +39,31 @@ export const projects = [
     ],
     github: "https://github.com/georgesnoe/coopledger",
     live: "https://coopledger-web.vercel.app/",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/coopledger",
+  },
+  {
+    title: "KYA Marketplace",
+    description: "A digital marketplace for KYA-Energy Group, enabling efficient energy equipment trading and service discovery.",
+    techStack: ["Next.js", "TypeScript", "NextAuth", "Tailwind CSS", "Biome"],
+    github: "https://github.com/yongvic/kya-marketplace",
+    live: "https://github.com/yongvic/kya-marketplace",
+    image: "https://opengraph.githubassets.com/1/yongvic/kya-marketplace",
+  },
+  {
+    title: "Archipel (Algorithm Avengers)",
+    description: "A sovereign P2P protocol developed for 'The Geek & The Moon' hackathon. Works in complete autarky without internet or central servers.",
+    techStack: ["Python", "P2P", "Cryptography", "UDP Multicast", "TCP Sockets"],
+    github: "https://github.com/JavaScriptUalist/algorithm-avengers",
+    live: "https://github.com/JavaScriptUalist/algorithm-avengers",
+    image: "https://opengraph.githubassets.com/1/JavaScriptUalist/algorithm-avengers",
+  },
+  {
+    title: "lazykube.nvim",
+    description: "A Neovim wrapper for lazykube to effortlessly interact with Kubernetes within Neovim. Focused on improving developer productivity.",
+    techStack: ["Lua", "Neovim API", "Kubernetes"],
+    github: "https://github.com/georgesnoe/lazykube.nvim",
+    live: "https://github.com/georgesnoe/lazykube.nvim",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/lazykube.nvim",
   },
   {
     title: "LBS Planning",
@@ -45,6 +71,7 @@ export const projects = [
     techStack: ["Next.js", "PostgreSQL", "n8n", "Tailwind CSS"],
     github: "https://github.com/georgesnoe/lbs-planning",
     live: "https://lbs-planning.vercel.app/",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/lbs-planning",
   },
   {
     title: "lazygithub.nvim",

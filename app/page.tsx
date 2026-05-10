@@ -29,6 +29,7 @@ import { FadeIn } from "@/components/fade-in"
 import { projects, skills, experience, personalInfo, toolsSetup } from "@/lib/data"
 import Link from "next/link"
 import { motion } from "motion/react"
+import Image from "next/image"
 
 export default function Page() {
   return (
@@ -94,11 +95,21 @@ export default function Page() {
                 className="h-full"
               >
                 <Card className="flex h-full flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-colors hover:border-primary/20">
-                  <div className="group relative aspect-video bg-muted/30">
-                    <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-primary/5 transition-transform duration-500 group-hover:scale-110">
-                      {project.title}
-                    </div>
-                    <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="group relative aspect-video bg-muted/30 overflow-hidden">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-primary/5 transition-transform duration-500 group-hover:scale-110">
+                        {project.title}
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-linear-to-t from-background/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
                   <CardHeader>
                     <CardTitle className="text-2xl">{project.title}</CardTitle>
