@@ -73,6 +73,13 @@ export const projects = [
     live: "https://lbs-planning.vercel.app/",
     image: "https://opengraph.githubassets.com/1/georgesnoe/lbs-planning",
   },
+  {
+    title: "lazygithub.nvim",
+    description: "A Neovim wrapper for lazy-github to effortlessly interact with GitHub within Neovim. Focused on improving developer productivity.",
+    techStack: ["Lua", "Neovim API"],
+    github: "https://github.com/georgesnoe/lazygithub.nvim",
+    live: "https://github.com/georgesnoe/lazygithub.nvim",
+  },
 ]
 
 export const skills = [
