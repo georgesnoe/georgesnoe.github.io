@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
+import Script from "next/script"
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -65,6 +66,15 @@ export default function RootLayout({
         manrope.variable
       )}
     >
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ENV9HMRE0E" />
+        <Script children={`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ENV9HMRE0E');`} />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased selection:bg-primary/10 selection:text-primary">
         <ThemeProvider>
           <TooltipProvider>
