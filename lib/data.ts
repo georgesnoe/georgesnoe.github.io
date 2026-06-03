@@ -13,6 +13,47 @@ I speak Ewe (native), French, English, and a bit of Spanish and Deutsch.`,
   location: "Lomé, Togo",
 }
 
+export const currentFocus = [
+  {
+    title: "Distributed Systems",
+    description: "Exploring P2P protocols and decentralized architectures for resilient applications.",
+    icon: "IconNetwork",
+  },
+  {
+    title: "AI Integration",
+    description: "Building LLM-powered tools to enhance developer productivity and user experience.",
+    icon: "IconRobot",
+  },
+  {
+    title: "Entrepreneurship",
+    description: "Learning how to turn technical solutions into viable business products.",
+    icon: "IconRocket",
+  },
+]
+
+export const funFacts = [
+  {
+    label: "Coffee Consumption",
+    value: "Low",
+    description: "Preferring clarity and focus over caffeine.",
+  },
+  {
+    label: "Favorite Editor",
+    value: "Neovim",
+    description: "Because I love my keyboard and hate my mouse.",
+  },
+  {
+    label: "Learning Style",
+    value: "Build & Break",
+    description: "I learn best by breaking things and then fixing them.",
+  },
+  {
+    label: "Organization",
+    value: "Notion",
+    description: "My second brain for planning and documentation.",
+  },
+]
+
 export const projects = [
   {
     title: "Portfolio Website",
@@ -125,7 +166,7 @@ export const toolsSetup = [
     link: "https://github.com/georgesnoe/dotfiles",
   },
   {
-    name: "Linear",
-    description: "Used for project management and tracking my personal development progress.",
+    name: "Notion",
+    description: "Used for project management, knowledge base, and tracking my personal development progress.",
   },
 ]

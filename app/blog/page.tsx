@@ -1,16 +1,13 @@
 import Link from "next/link"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn } from "@/components/fade-in"
+import { Metadata } from "next"
+import { blogPosts } from "@/lib/blog"
 
-// In a real app, you'd fetch this from the filesystem or a CMS
-const posts = [
-  {
-    slug: "first-post",
-    title: "My First Blog Post",
-    description: "An introduction to my blog and why I use MDX.",
-    date: "2024-03-20",
-  },
-]
+export const metadata: Metadata = {
+  title: "Blog | Georges-Noé",
+  description: "Thoughts on development, design, and technology.",
+}
 
 export default function BlogPage() {
   return (
@@ -25,7 +22,7 @@ export default function BlogPage() {
       </FadeIn>
 
       <div className="grid gap-6">
-        {posts.map((post, index) => (
+        {blogPosts.map((post, index) => (
           <FadeIn key={post.slug} delay={index * 0.1}>
             <Link href={`/blog/${post.slug}`}>
               <Card className="hover:bg-muted/50 transition-colors border-muted-foreground/10">

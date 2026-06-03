@@ -1,4 +1,5 @@
 import { Geist_Mono, Manrope } from "next/font/google"
+import { Metadata } from "next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -13,6 +14,40 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: {
+    default: "Kossi Georges-Noé AHOMBO | Full Stack Software Engineer",
+    template: "%s | Georges-Noé",
+  },
+  description:
+    "Software Engineer & Information Systems student passionate about building clean, scalable, and well-crafted digital products.",
+  keywords: [
+    "Software Engineer",
+    "Full Stack",
+    "Next.js",
+    "TypeScript",
+    "Lomé, Togo",
+  ],
+  authors: [{ name: "Kossi Georges-Noé AHOMBO" }],
+  openGraph: {
+    title: "Kossi Georges-Noé AHOMBO",
+    description:
+      "Software Engineer & Information Systems student passionate about building clean, scalable, and well-crafted digital products.",
+    url: "https://www.georgesnoe.fr.eu.org",
+    siteName: "Georges-Noé Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+export const viewport = {
+  themeColor: "#6366f1",
+}
 
 export default function RootLayout({
   children,

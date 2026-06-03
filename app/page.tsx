@@ -24,16 +24,24 @@ import {
   IconCode,
   IconBriefcase,
   IconLayout,
+  IconNetwork,
+  IconRobot,
+  IconRocket,
 } from "@tabler/icons-react"
 import { FadeIn } from "@/components/fade-in"
-import { projects, skills, experience, personalInfo, toolsSetup } from "@/lib/data"
+import { projects, skills, experience, personalInfo, toolsSetup, currentFocus, funFacts } from "@/lib/data"
 import Link from "next/link"
 import { motion } from "motion/react"
 import Image from "next/image"
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-24 pb-20">
+    <div className="flex flex-col gap-24 pb-20 relative overflow-hidden">
+      {/* Background Gradient Blobs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/10 blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute top-[20%] right-[-5%] w-[30%] h-[30%] rounded-full bg-accent/20 blur-[100px] -z-10" />
+      <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-secondary/20 blur-[120px] -z-10" />
+
       {/* Hero Section */}
       <section className="container mx-auto max-w-7xl px-4 pt-24 sm:px-8 md:pt-36">
         <FadeIn>
@@ -45,17 +53,22 @@ export default function Page() {
               Available for new projects
             </Badge>
             <h1 className="max-w-4xl text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl">
-              I build <span className="text-primary">digital experiences</span>{" "}
+              I build <span className="relative inline-block">
+                <span className="relative z-10 text-primary">digital experiences</span>
+              </span>{" "}
               that matter.
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground md:text-xl/relaxed">
               Hi, I&apos;m {personalInfo.name}. {personalInfo.bio}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button size="lg" render={(props) => <Link href="#contact" {...props} />}>
-                Get in touch
+              <Button size="lg" className="group relative overflow-hidden transition-all hover:scale-105" render={(props) => <Link href="#contact" {...props} />}>
+                <span className="relative z-10 flex items-center gap-2">
+                  Get in touch
+                  <IconSend className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </span>
               </Button>
-              <Button variant="outline" size="lg" render={(props) => <Link href="#projects" {...props} />}>
+              <Button variant="outline" size="lg" className="transition-all hover:scale-105 hover:border-primary/50" render={(props) => <Link href="#projects" {...props} />}>
                 View work
               </Button>
             </div>
@@ -65,6 +78,28 @@ export default function Page() {
             </div>
           </div>
         </FadeIn>
+      </section>
+
+      {/* Focus Section */}
+      <section className="container mx-auto max-w-7xl px-4 sm:px-8 py-12">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {currentFocus.map((focus, index) => (
+            <FadeIn key={focus.title} delay={index * 0.1}>
+              <Card className="group relative overflow-hidden border-border/50 bg-card/50 p-6 transition-all hover:border-primary/30">
+                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all group-hover:bg-primary/10" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    {focus.icon === "IconNetwork" && <IconNetwork className="h-6 w-6" />}
+                    {focus.icon === "IconRobot" && <IconRobot className="h-6 w-6" />}
+                    {focus.icon === "IconRocket" && <IconRocket className="h-6 w-6" />}
+                  </div>
+                  <h3 className="text-xl font-bold">{focus.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{focus.description}</p>
+                </div>
+              </Card>
+            </FadeIn>
+          ))}
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -169,9 +204,26 @@ export default function Page() {
                 <h3 className="text-2xl font-bold">Skills</h3>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
-                    <Badge key={skill.name} variant="outline" className="px-3 py-1 text-sm font-normal">
+                    <Badge key={skill.name} variant="outline" className="px-3 py-1 text-sm font-normal transition-all hover:bg-primary/10 hover:text-primary">
                       {skill.name}
                     </Badge>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.4}>
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold">Fun Facts</h3>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {funFacts.map((fact) => (
+                    <div key={fact.label} className="rounded-2xl border border-border/50 bg-card/50 p-4 transition-all hover:border-primary/20">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{fact.label}</span>
+                        <span className="text-xs font-bold text-primary">{fact.value}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{fact.description}</p>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -179,7 +231,7 @@ export default function Page() {
           </div>
 
           <div className="space-y-12">
-            <div>
+            <div className="space-y-6">
               <FadeIn>
                 <div className="flex items-center gap-2 text-primary mb-6">
                   <IconBriefcase className="h-5 w-5" />
@@ -289,24 +341,23 @@ export default function Page() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <Card className="border-border/50 p-6 shadow-xl shadow-primary/5 md:p-8">
-              <form className="grid gap-6">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="grid gap-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Name
-                    </label>
-                    <Input id="name" placeholder="John Doe" />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@example.com"
-                    />
-                  </div>
+              <form 
+                className="grid gap-6" 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name");
+                  const message = formData.get("message");
+                  const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+                  const body = encodeURIComponent(`Hi Georges,\n\n${message}\n\nSent from your portfolio website.`);
+                  window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+                }}
+              >
+                <div className="grid gap-2">
+                  <label htmlFor="name" className="text-sm font-medium">
+                    Name
+                  </label>
+                  <Input id="name" name="name" placeholder="John Doe" required />
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="message" className="text-sm font-medium">
@@ -314,11 +365,13 @@ export default function Page() {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="How can I help you?"
                     className="min-h-[120px]"
+                    required
                   />
                 </div>
-                <Button className="w-full py-6 text-lg">
+                <Button type="submit" className="w-full py-6 text-lg">
                   <IconSend className="mr-2 h-5 w-5" />
                   Send Message
                 </Button>
