@@ -1,10 +1,12 @@
-import FirstPost from "../first-post.mdx"
+import HowIForcedShadcnIntoNeoBrutalism from "../how-i-forced-shadcn-into-neo-brutalism-in-one-night-before-a-job-dating.mdx"
+import TheTechIdiocracy from "../the-tech-idiocracy-how-the-ai-hype-is-making-us-dumber.mdx"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { IconArrowLeft } from "@tabler/icons-react"
 
 const posts: Record<string, React.ComponentType> = {
-  "first-post": FirstPost,
+  "how-i-forced-shadcn-into-neo-brutalism-in-one-night-before-a-job-dating": HowIForcedShadcnIntoNeoBrutalism,
+  "the-tech-idiocracy-how-the-ai-hype-is-making-us-dumber": TheTechIdiocracy,
 }
 
 interface PostProps {
