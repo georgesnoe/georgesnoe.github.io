@@ -120,7 +120,24 @@ export const projects = [
     techStack: ["Lua", "Neovim API"],
     github: "https://github.com/georgesnoe/lazygithub.nvim",
     live: "https://github.com/georgesnoe/lazygithub.nvim",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/lazygithub.nvim",
   },
+  {
+    title: "Solar-Health",
+    description: "A solar energy production and consumption monitoring platform that sends alerts for anomalies through WhatsApp.",
+    techStack: ["Next.js", "PostgreSQL", "n8n", "GoWA API"],
+    live: "https://solar-health.vercel.app/",
+    github: "https://github.com/georgesnoe/solar-health",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/solar-health",
+  },
+  {
+    title: "My personal knowledge base",
+    description: "A place where i store everything, from notes, to whatsapp chats and emails",
+    techStack: ["Next.js", "PostgreSQL", "n8n", "Gemini API", "GoWA API", "Gmail API"],
+    live: "https://knowledge-base-mine.vercel.app/",
+    github: "https://github.com/georgesnoe/knowledge-base",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/knowledge-base",
+  }
 ]
 
 export const skills = [
