@@ -197,8 +197,10 @@ export default function Page() {
                 label="About Me"
                 title="The mind behind the code."
               />
-              <div className="mt-8 space-y-4 text-lg font-medium leading-relaxed text-foreground/80">
-                <p>{personalInfo.detailedBio}</p>
+              <div className="mt-8 space-y-6 text-lg font-medium leading-relaxed text-foreground/80">
+                {personalInfo.detailedBio.split('\n\n').filter(Boolean).map((para, i) => (
+                  <p key={i}>{para.trim()}</p>
+                ))}
               </div>
             </FadeIn>
 
@@ -206,11 +208,22 @@ export default function Page() {
               <div className="space-y-6">
                 <h3 className="inline-block border-2 border-foreground bg-white px-4 py-1.5 text-lg font-black uppercase">Skills</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <Badge key={skill.name} variant="outline" className="px-3 py-1.5 text-sm font-bold transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary">
-                      {skill.name}
-                    </Badge>
-                  ))}
+                  {skills.map((skill) => {
+                    const categoryColors: Record<string, string> = {
+                      Frontend: "border-blue-600 bg-blue-100 text-blue-800 hover:bg-blue-600 hover:text-white",
+                      Backend: "border-emerald-600 bg-emerald-100 text-emerald-800 hover:bg-emerald-600 hover:text-white",
+                      Database: "border-purple-600 bg-purple-100 text-purple-800 hover:bg-purple-600 hover:text-white",
+                      ORM: "border-orange-600 bg-orange-100 text-orange-800 hover:bg-orange-600 hover:text-white",
+                      Mobile: "border-cyan-600 bg-cyan-100 text-cyan-800 hover:bg-cyan-600 hover:text-white",
+                      Web3: "border-pink-600 bg-pink-100 text-pink-800 hover:bg-pink-600 hover:text-white",
+                    }
+                    const colors = categoryColors[skill.category] ?? "border-foreground bg-white text-foreground hover:bg-foreground hover:text-white"
+                    return (
+                      <span key={skill.name} className={`inline-flex items-center px-3 py-1.5 text-sm font-bold border-2 border-foreground transition-all ${colors}`}>
+                        {skill.name}
+                      </span>
+                    )
+                  })}
                 </div>
               </div>
             </FadeIn>
@@ -241,21 +254,20 @@ export default function Page() {
                   <span>Experience</span>
                 </div>
               </FadeIn>
-              <div className="space-y-12">
+              <div className="space-y-10">
                 {experience.map((exp, index) => (
                   <FadeIn key={index} delay={index * 0.1}>
-                    <div className="relative border-l-3 border-foreground pl-8 pb-2">
-                      <div className="absolute -left-[10px] top-0 h-5 w-5 border-2 border-foreground bg-primary" />
-                      <div className="flex flex-col gap-1">
-                        <span className="inline-block w-fit border-2 border-foreground bg-secondary px-2 py-0.5 text-xs font-bold uppercase">
+                    <div className="border-3 border-foreground bg-white p-6 shadow-[8px_8px_0px_0px] shadow-foreground">
+                      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                        <span className="inline-block border-2 border-foreground bg-secondary px-3 py-1 text-xs font-bold uppercase shadow-[2px_2px_0px_0px] shadow-foreground">
                           {exp.period}
                         </span>
-                        <h3 className="text-2xl font-black uppercase tracking-tight mt-2">{exp.role}</h3>
-                        <p className="text-lg font-bold text-foreground/80">{exp.company}</p>
-                        <p className="mt-2 text-foreground/70 font-medium leading-relaxed">
-                          {exp.description}
-                        </p>
                       </div>
+                      <h3 className="text-2xl font-black uppercase tracking-tight text-primary">{exp.role}</h3>
+                      <p className="mt-1 text-lg font-bold text-foreground/80 border-b-2 border-foreground/20 pb-3 mb-4">{exp.company}</p>
+                      <p className="text-foreground/70 font-medium leading-relaxed">
+                        {exp.description}
+                      </p>
                     </div>
                   </FadeIn>
                 ))}
@@ -311,11 +323,11 @@ export default function Page() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="container mx-auto max-w-5xl px-4 sm:px-8"
+        className="container mx-auto max-w-6xl px-4 sm:px-8"
       >
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <FadeIn>
-            <div className="space-y-6 lg:col-span-2">
+            <div className="space-y-6">
               <h2 className="text-4xl font-black uppercase tracking-tighter md:text-5xl">
                 Get In <span className="inline-block px-3 py-1 bg-primary text-primary-foreground -rotate-1">Touch</span>
               </h2>
@@ -325,12 +337,12 @@ export default function Page() {
               <div className="space-y-4 pt-4">
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex items-center gap-3 text-base font-bold uppercase transition-all hover:translate-x-1"
+                  className="flex items-center gap-3 text-base font-bold transition-all hover:translate-x-1"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center border-2 border-foreground bg-primary text-primary-foreground">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-foreground bg-primary text-primary-foreground">
                     <IconMail className="h-5 w-5" />
                   </div>
-                  <span className="underline decoration-2 decoration-primary underline-offset-4">{personalInfo.email}</span>
+                  <span className="underline decoration-2 decoration-primary underline-offset-4 break-all lowercase">{personalInfo.email}</span>
                 </a>
                 <a
                   href={personalInfo.linkedin}
@@ -338,7 +350,7 @@ export default function Page() {
                   rel="noreferrer"
                   className="flex items-center gap-3 text-base font-bold uppercase transition-all hover:translate-x-1"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center border-2 border-foreground bg-accent text-accent-foreground">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-foreground bg-accent text-accent-foreground">
                     <IconBrandLinkedin className="h-5 w-5" />
                   </div>
                   <span className="underline decoration-2 decoration-accent underline-offset-4">LinkedIn</span>
@@ -347,7 +359,7 @@ export default function Page() {
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <Card className="lg:col-span-3 p-6 md:p-8 shadow-[8px_8px_0px_0px] shadow-foreground">
+            <Card className="p-6 md:p-8 shadow-[8px_8px_0px_0px] shadow-foreground">
               <form
                 className="grid gap-6"
                 onSubmit={(e) => {
