@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import Script from "next/script"
+import { generateRssFeed } from "@/lib/generate-rss"
+import { blogPosts } from "@/lib/blog"
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -50,11 +52,14 @@ export const viewport = {
   themeColor: "#6366f1",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // One time generation of RSS feed during build.
+  await generateRssFeed(blogPosts)
+
   return (
     <html
       lang="en"
@@ -74,6 +79,12 @@ export default function RootLayout({
   gtag('js', new Date());
 
   gtag('config', 'G-ENV9HMRE0E');`} />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="RSS Feed for My Next.js Blog"
+          href="/feed.xml"
+        />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased selection:bg-primary/10 selection:text-primary">
         <ThemeProvider>
