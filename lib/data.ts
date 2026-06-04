@@ -58,8 +58,8 @@ export const projects = [
   {
     title: "Portfolio Website",
     description:
-      "My personal portfolio, reimagined for the new era. Built with Next.js, Motion, and Shadcn UI using the latest @base-ui/react components.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion", "@base-ui/react"],
+      "My personal portfolio, young and neo-brutalist. Built with Next.js, Motion, and Shadcn UI using the latest base-ui components.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
     github: "https://github.com/georgesnoe/georgesnoe.github.io",
     live: "https://www.georgesnoe.fr.eu.org",
     image: "https://opengraph.githubassets.com/1/georgesnoe/georgesnoe.github.io",
@@ -67,7 +67,7 @@ export const projects = [
   {
     title: "CoopLedger",
     description:
-      "MIABE Hackathon 2026 Edition winner. A platform built on Web3 technology for agricultural cooperatives, ensuring transparency and accountability in the supply chain.",
+      "MIABE Hackathon 2026 Edition. A platform built on Web3 technology for agricultural cooperatives, ensuring transparency and accountability in the supply chain.",
     techStack: [
       "Next.js",
       "Expressjs",
@@ -92,7 +92,7 @@ export const projects = [
   },
   {
     title: "Archipel (Algorithm Avengers)",
-    description: "A sovereign P2P protocol developed for 'The Geek & The Moon' hackathon. Works in complete autarky without internet or central servers.",
+    description: "A sovereign P2P protocol developed for 'Archipel' hackathon. Works in complete autarky without internet or central servers.",
     techStack: ["Python", "P2P", "Cryptography", "UDP Multicast", "TCP Sockets"],
     github: "https://github.com/JavaScriptUalist/algorithm-avengers",
     live: "https://github.com/JavaScriptUalist/algorithm-avengers",
