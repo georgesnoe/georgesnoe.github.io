@@ -27,25 +27,38 @@ export const metadata: Metadata = {
     "Software Engineer & Information Systems student passionate about building clean, scalable, and well-crafted digital products.",
   keywords: [
     "Software Engineer",
-    "Full Stack",
+    "FullStack",
+    "Frontend",
+    "Backend",
     "Next.js",
     "TypeScript",
-    "Lomé, Togo",
+    "Lomé",
+    "Togo",
+    "Developer",
+    "Portfolio",
+    "Database"
   ],
-  authors: [{ name: "Kossi Georges-Noé AHOMBO" }],
+  authors: { name: "Kossi Georges-Noé AHOMBO", url: "https://georgesnoe.fr.eu.org" },
   openGraph: {
     title: "Kossi Georges-Noé AHOMBO",
     description:
       "Software Engineer & Information Systems student passionate about building clean, scalable, and well-crafted digital products.",
-    url: "https://www.georgesnoe.fr.eu.org",
+    url: "https://georgesnoe.fr.eu.org",
     siteName: "Georges-Noé Portfolio",
     locale: "en_US",
     type: "website",
+    countryName: "Togo",
   },
   robots: {
     index: true,
     follow: true,
   },
+  creator: "Kossi Georges-Noé AHOMBO",
+  referrer: "origin",
+  verification: {
+    google: ""
+  },
+  category: "Developer Portfolio",
 }
 
 export const viewport = {
@@ -86,7 +99,7 @@ export default async function RootLayout({
           href="/feed.xml"
         />
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased selection:bg-primary/10 selection:text-primary">
+      <body lang="en" className="min-h-screen bg-background font-sans antialiased selection:bg-primary/10 selection:text-primary">
         <ThemeProvider>
           <TooltipProvider>
             <div className="relative flex min-h-screen flex-col">
