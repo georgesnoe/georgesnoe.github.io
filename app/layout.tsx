@@ -1,4 +1,4 @@
-import { Geist_Mono, Rubik } from "next/font/google"
+import { Geist_Mono, Gabarito } from "next/font/google"
 import { Metadata } from "next"
 
 import "./globals.css"
@@ -11,7 +11,7 @@ import Script from "next/script"
 import { generateRssFeed } from "@/lib/generate-rss"
 import { blogPosts } from "@/lib/blog"
 
-const manrope = Rubik({ subsets: ["latin"], variable: "--font-sans" })
+const manrope = Gabarito({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
