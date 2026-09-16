@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     "Portfolio",
     "Database"
   ],
-  authors: { name: "Kossi Georges-Noé AHOMBO", url: "https://georgesnoe.fr.eu.org" },
+  authors: { name: "Kossi Georges-Noé AHOMBO", url: "https://georgesnoe.github.io" },
   openGraph: {
     title: "Kossi Georges-Noé AHOMBO",
     description:
       "Software Engineer & Information Systems student passionate about building clean, scalable, and well-crafted digital products.",
-    url: "https://georgesnoe.fr.eu.org",
+    url: "https://georgesnoe.github.io",
     siteName: "Georges-Noé Portfolio",
     locale: "en_US",
     type: "website",

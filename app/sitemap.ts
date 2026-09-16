@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blog"
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://georgesnoe.fr.eu.org"
+  const baseUrl = "https://georgesnoe.github.io"
 
   const blogPostsSitemap: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,

@@ -10,7 +10,7 @@ interface Post {
 }
 
 export async function generateRssFeed(posts: Post[]) {
-    const siteUrl = "https://www.georgesnoe.fr.eu.org";
+    const siteUrl = "https://www.georgesnoe.github.io";
 
     const feed = new RSS({
         title: 'My Next.js Blog',

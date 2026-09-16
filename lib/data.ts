@@ -61,7 +61,7 @@ export const projects = [
       "My personal portfolio, young and neo-brutalist. Built with Next.js, Motion, and Shadcn UI using the latest base-ui components.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
     github: "https://github.com/georgesnoe/georgesnoe.github.io",
-    live: "https://www.georgesnoe.fr.eu.org",
+    live: "https://www.georgesnoe.github.io",
     image: "https://opengraph.githubassets.com/1/georgesnoe/georgesnoe.github.io",
   },
   {
@@ -107,10 +107,10 @@ export const projects = [
     image: "https://opengraph.githubassets.com/1/georgesnoe/lazykube.nvim",
   },
   {
-    title: "LBS Planning",
+    title: "AllnOne+",
     description: "Enhanced scheduling and planning system built for students at Lomé Business School to manage their academic life efficiently.",
-    techStack: ["Next.js", "PostgreSQL", "n8n", "Tailwind CSS"],
-    github: "https://github.com/georgesnoe/lbs-planning",
+    techStack: ["Flutter", "PostgreSQL", "n8n"],
+    github: "https://github.com/georgesnoe/allnoneplus",
     live: "https://lbs-planning.vercel.app/",
     image: "https://opengraph.githubassets.com/1/georgesnoe/lbs-planning",
   },
@@ -131,12 +131,12 @@ export const projects = [
     image: "https://opengraph.githubassets.com/1/georgesnoe/solar-health",
   },
   {
-    title: "My personal knowledge base",
-    description: "A place where i store everything, from notes, to whatsapp chats and emails",
-    techStack: ["Next.js", "PostgreSQL", "n8n", "Gemini API", "GoWA API", "Gmail API"],
-    live: "https://knowledge-base-mine.vercel.app/",
-    github: "https://github.com/georgesnoe/knowledge-base",
-    image: "https://opengraph.githubassets.com/1/georgesnoe/knowledge-base",
+    title: "Convoi",
+    description: "A carpooling platform for students",
+    techStack: ["Node.js", "PostgreSQL", "Flutter"],
+    live: "https://github.com/georgesnoe/convoi-backend",
+    github: "https://github.com/georgesnoe/convoi-backend",
+    image: "https://opengraph.githubassets.com/1/georgesnoe/convoi-backend"
   }
 ]
 
@@ -164,6 +164,12 @@ export const experience = [
     description:
       "Redesigned the company's legacy website to ensure modern responsiveness and accessibility. Developed a comprehensive monitoring platform for solar energy usage tracking.",
   },
+  {
+    company: "Freelance",
+    role: "Fullstack developer",
+    period: "June 2026 - now",
+    description: "Currently working for a small agency to help them build their online presence"
+  }
 ]
 
 export const toolsSetup = [
