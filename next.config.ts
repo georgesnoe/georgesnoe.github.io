@@ -1,10 +1,20 @@
-import type { NextConfig } from "next";
+import createMDX from "@next/mdx"
+import type { NextConfig } from "next"
 
+/**
+ * Static export (GitHub Pages) + local MDX.
+ * MDX files are compiled by @next/mdx; each post exports its own `metadata`,
+ * which is the single source of truth for titles/dates in the index, RSS and SEO.
+ */
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  images: { unoptimized: true },
   reactCompiler: true,
-};
+}
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+})
+
+export default withMDX(nextConfig)
