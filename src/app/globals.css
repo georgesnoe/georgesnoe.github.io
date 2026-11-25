@@ -90,7 +90,8 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    overflow-x: clip;
+    /* No overflow-x clipping here: it breaks ScrollTrigger's pin spacing.
+       Sections that can overflow horizontally clip themselves instead. */
   }
 
   ::selection {

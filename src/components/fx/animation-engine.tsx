@@ -164,9 +164,11 @@ export function AnimationEngine({ children }: { children: ReactNode }) {
             start: "top top",
             end: () => `+=${distance()}`,
             pin: true,
+            pinSpacing: true,
             scrub: 1,
-            anticipatePin: 1,
+            anticipatePin: 0,
             invalidateOnRefresh: true,
+            refreshPriority: 1,
           },
         })
         return () => tween.kill()

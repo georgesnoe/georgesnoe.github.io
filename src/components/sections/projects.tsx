@@ -8,7 +8,7 @@ export function Projects() {
     <section
       id="projects"
       data-horizontal
-      className="relative border-y-3 border-foreground bg-muted py-24 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:overflow-hidden lg:py-16"
+      className="relative border-y-3 border-foreground bg-muted py-24 lg:z-10 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:overflow-hidden lg:pb-16 lg:pt-24"
     >
       <div className="pixel-grid pointer-events-none absolute inset-0" aria-hidden="true" />
 
