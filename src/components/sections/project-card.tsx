@@ -157,7 +157,7 @@ export function ProjectCard({
           <CardTitle>{project.title}</CardTitle>
           <CardDescription>{project.description}</CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
+        <CardContent className="flex flex-wrap content-start items-start gap-2">
           {project.techStack.map((tech) => (
             <Badge key={tech} tone="outline" className="text-[0.6rem]">
               {tech}
